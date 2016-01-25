@@ -1,0 +1,23 @@
+{
+    "name": "nbulaienko/sortable",
+    "description": "Eloquent model sort trait.",
+    "keywords": ["laravel", "eloquent", "sort", "sortable", "database", "model"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nickolay Bulaienko",
+            "email": "nbulaienko@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/database": "4.2.x|~5.0",
+        "ext-mbstring": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "nbulaienko\\sortable\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
