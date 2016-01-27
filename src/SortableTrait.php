@@ -13,7 +13,7 @@ trait SortableTrait {
 
     protected $sorting_column;
 
-    public function scopeSortable($query)
+    public function scopeSortable($query, array $defaultOrder = [])
     {
         if (Input::has('s') && Input::has('o')) {
             $this->processMap();
@@ -26,6 +26,7 @@ trait SortableTrait {
             }
 
         } else {
+        	if (!empty($defaultOrder)) $query->orderBy($defaultOrder[0], isset($defaultOrder[1]) ? $defaultOrder[1] : 'desc');
             return $query;
         }
     }
