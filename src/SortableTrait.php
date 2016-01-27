@@ -26,7 +26,13 @@ trait SortableTrait {
             }
 
         } else {
-        	if (!empty($defaultOrder)) $query->orderBy($defaultOrder[0], isset($defaultOrder[1]) ? $defaultOrder[1] : 'desc');
+        	
+        	if (!empty($defaultOrder)) {
+        		foreach ($defaultOrder as $key => $value) {
+        			$query->orderBy($key, $value);
+        		}
+        	}
+
             return $query;
         }
     }
